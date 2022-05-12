@@ -37,7 +37,6 @@ function App() {
           let newList = response.data.results;
           setAnimeList(newList);
           if (newList.length === 0) {
-            console.log(newList.length);
             setMessage(`No records found for query : ${query}`);
           }
         })
@@ -73,7 +72,10 @@ function App() {
   return (
     <div className="App">
       <Container className="fixed-top">
-        <Row className="py-4 mx-auto justify-content-center">
+        <Row
+          className="py-4 mx-auto justify-content-center"
+          style={{ backgroundColor: "#0d6efd" }}
+        >
           <Col xs={6}>
             <InputGroup className="mb-3 justify-content-center">
               <FormControl
@@ -111,15 +113,16 @@ function App() {
             <div className="py-2 text-light text-center mx-auto px-4">
               <h6 style={{ color: "whitesmoke" }}>
                 {" "}
-                Requesting : https://api.jikan.moe/v3/search/anime?q={query}
+                {query &&
+                  `Requesting : https://api.jikan.moe/v3/search/anime?q=${query}`}
               </h6>
             </div>
           </Col>
         </Row>
+        <div className="my-4 py-4">{message}</div>
       </Container>
 
-      <Container className="">
-        <div className="my-4 py-4">{message}</div>
+      <Container className="py-4 my-4">
         <div className="my-4 py-4"></div>
         {animeList.length > 0 && (
           <div>

@@ -6,6 +6,10 @@ body{
   text-align: center;
 }
 
+.card{
+border-radius: 0.58rem !important;
+}
+
 .fixed-header{
   position: fixed;
 }
@@ -18,6 +22,7 @@ input::placeholder{
   max-height:24rem !important;
   min-height:24rem;
   position: relative;
+  border-radius: 0.58rem 0.58rem 0rem 0rem !important;
 }
 .change-cursor{
   cursor:pointer;
